@@ -1,0 +1,23 @@
+h1,
+h2 {
+  text-align: center;
+}
+.input-to-do,
+ul {
+  margin: 0 auto;
+  display: block;
+  width: 200px;
+  margin-bottom: 10px;
+}
+li {
+  border-bottom: 1px solid gray;
+  list-style: none;
+  margin-bottom: 10px;
+  display: flex;
+}
+ul {
+  padding-left: 0;
+}
+span {
+  flex: 1 1 auto;
+}
