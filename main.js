@@ -8,7 +8,8 @@ class ListToDoItem  {
 		<li class="list-to-do-item">
 		<span>${this.textToDo}</span>
 		<input class="checkbox" type="checkbox">
-		</li>`
+		</li>
+		`
 	}
 }
 
@@ -24,19 +25,18 @@ class ListToDo {
 			{textToDo: "Hallo World"},
 			{textToDo: "Hallo World"},
 			{textToDo: "Hallo World"},
-			{textToDo: "Hallo World"},
 		]
 	}
 	render(){
 		let toDoHtml = ""
-		this.toDoItem.forEach(({textToDo})=>{
-			const toDoItem = new ListToDoItem (textToDo)
+		this.toDoItem.forEach((textToDo) =>{
+			const toDoItem = new ListToDoItem (textToDo.textToDo)
 			toDoHtml += toDoItem.render()
 		})
 		document.querySelector('.list-to-do').innerHTML = toDoHtml
 	}
-	
 }
+
 
 const runToDo = new ListToDo()
 runToDo.fetchToDoItem()
@@ -47,5 +47,7 @@ let inputToDo = document.querySelector('.input-to-do')
       if (e.keyCode === 13){
 		runToDo.addToDoItem(inputToDo.value)
 		console.log(inputToDo.value)
-      }
+		inputToDo.value=""
+	  }
+	  runToDo.render()
     });
