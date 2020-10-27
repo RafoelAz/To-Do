@@ -37,17 +37,42 @@ class ListToDo {
 	}
 }
 
+class ListDone{
+	constructor(){
+		this.doneItem = []
+	}
+	
+	fetchDone(){
+		this.doneItem =[]
+	}
+
+	returnToToDoItem(){
+
+	}
+}
 
 const runToDo = new ListToDo()
 runToDo.fetchToDoItem()
 runToDo.render()
 
+
+
+//! уберает таск из inbox
+	let addToDone = document.querySelectorAll('.checkbox')
+	addToDone.forEach(elem => {
+  	elem.addEventListener('click',function(e) {
+    let currentItem = e.currentTarget
+    console.log(currentItem)
+	});
+//runToDo.render()
+});
+	
+//! Cоздает новый таск в inbox
 let inputToDo = document.querySelector('.input-to-do')
     inputToDo.addEventListener('keydown', function (e) {
       if (e.keyCode === 13){
 		runToDo.addToDoItem(inputToDo.value)
 		console.log(inputToDo.value)
-		inputToDo.value=""
 	  }
 	  runToDo.render()
-    });
+	});
